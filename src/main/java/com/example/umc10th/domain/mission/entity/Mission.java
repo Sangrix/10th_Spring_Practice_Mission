@@ -39,7 +39,7 @@ public class Mission extends BaseEntity {
 
    @Enumerated(EnumType.STRING)
    @Column(name = "active", nullable = false)
-   private IsActive active;
+   private IsActive isActive;
 
    @Column(name = "started_time", nullable = false)
    private LocalDate startedTime;

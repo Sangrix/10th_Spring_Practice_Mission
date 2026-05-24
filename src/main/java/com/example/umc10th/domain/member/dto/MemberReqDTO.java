@@ -6,7 +6,14 @@ import java.time.LocalDate;
 
 public class MemberReqDTO {
 
-   public record GetInfo(Long id){}
+   public record SignUp(
+       String name,
+       Gender gender,
+       LocalDate birth,
+       String address
+   ){}
 
-   public record SignUp(String name, Gender gender, LocalDate birth, String address){}
+   public record GetMyPage(
+        Long id
+    ) {}
 }

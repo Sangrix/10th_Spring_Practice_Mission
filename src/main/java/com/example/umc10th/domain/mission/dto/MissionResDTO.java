@@ -9,8 +9,21 @@ import java.util.List;
 public class MissionResDTO {
 
    @Builder
-   public record GetMission(List<MissionItem> missions){}
+    public record MissionList(
+        List<MissionItem> missions,
+        Integer currentPage,
+        Integer totalPages,
+        Boolean hasNext
+    ) {}
 
-   @Builder
-   public record MissionItem(Long userId, Long missionId, String name, String content, IsActive isActive, LocalDateTime finishedTime){}
+    @Builder
+    public record MissionItem(
+        Long userMissionId,       // member_mission_id
+        Long missionId,
+        String storeName,
+        String missionContent,
+        Integer rewardPoint,
+        String status,            // IN_PROGRESS / COMPLETED
+        Integer dDay
+    ) {}
 }

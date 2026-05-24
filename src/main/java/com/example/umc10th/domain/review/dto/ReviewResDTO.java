@@ -6,5 +6,11 @@ import java.time.LocalDateTime;
 
 public class ReviewResDTO {
    @Builder
-   public record Create(Long reviewId, LocalDateTime createdAt){}
+   public record Create(
+       Long reviewId,
+       String storeName,
+       Integer rating,
+       String content,
+       LocalDateTime createdAt
+   ){}
 }

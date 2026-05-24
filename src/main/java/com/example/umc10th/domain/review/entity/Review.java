@@ -5,12 +5,14 @@ import com.example.umc10th.domain.store.entity.Store;
 import com.example.umc10th.global.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "review")
 @Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Review extends BaseEntity {

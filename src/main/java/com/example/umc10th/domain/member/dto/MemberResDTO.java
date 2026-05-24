@@ -8,8 +8,15 @@ import java.time.LocalDateTime;
 public class MemberResDTO {
 
    @Builder
-   public record GetInfo(String name, Gender FEMALE, Integer point){}
+   public record SignUp(
+       Long id,
+       LocalDateTime createdAt
+   ){}
 
    @Builder
-   public record SignUp(Long id, LocalDateTime createdAt){}
+    public record MyPage(
+        String name,
+        String email,
+        Long point
+    ) {}
 }

@@ -5,7 +5,6 @@ import com.example.umc10th.domain.member.dto.MemberReqDTO;
 import com.example.umc10th.domain.member.dto.MemberResDTO;
 import com.example.umc10th.domain.member.entity.Member;
 import com.example.umc10th.domain.member.exception.MemberErrorCode;
-import com.example.umc10th.domain.member.exception.MemberException;
 import com.example.umc10th.domain.member.repository.MemberRepository;
 import com.example.umc10th.global.apiPayload.exception.ProjectException;
 import lombok.RequiredArgsConstructor;
@@ -20,31 +19,15 @@ public class MemberService {
 
     @Transactional
     public MemberResDTO.SignUp signUp(MemberReqDTO.SignUp dto) {
-        Member member = Member.builder()
-            .name(dto.name())
-            .gender(dto.gender())
-            .birth(dto.birth())
-            .address(dto.address())
-            .build();
-
+        Member member = MemberConverter.toMember(dto);
         Member saved = memberRepository.save(member);
-
-        return MemberResDTO.SignUp.builder()
-            .id(saved.getId())
-            .createdAt(saved.getCreatedAt())
-            .build();
+        return MemberConverter.toSignUpRes(saved);
     }
 
     @Transactional(readOnly = true)
     public MemberResDTO.MyPage getMyPage(Long memberId) {
         Member member = memberRepository.findById(memberId)
             .orElseThrow(() -> new ProjectException(MemberErrorCode.MEMBER_NOT_FOUND));
-            // ↑ IllegalArgumentException 대신 ProjectException 사용
-            //   → GeneralExceptionAdvice가 자동으로 잡아서 ApiResponse로 변환
-
-        return MemberResDTO.MyPage.builder()
-            .name(member.getName())
-            .point(member.getPoint())
-            .build();
+        return MemberConverter.toMyPageRes(member);
     }
 }

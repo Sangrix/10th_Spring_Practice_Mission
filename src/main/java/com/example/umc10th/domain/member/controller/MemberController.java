@@ -19,13 +19,13 @@ public class MemberController {
 
    @PostMapping("/auth/signup")
    public ApiResponse<MemberResDTO.SignUp> signup(@RequestBody MemberReqDTO.SignUp dto){
-      BaseSuccessCode code = MemberSuccessCode.CREATED;
+      BaseSuccessCode code = MemberSuccessCode.SIGN_UP;
       return ApiResponse.onSuccess(code,memberService.signUp(dto));
    }
 
    @PostMapping("/v1/users/me")
    public ApiResponse<MemberResDTO.GetInfo> getInfo( @RequestBody MemberReqDTO.GetInfo dto){
-      BaseSuccessCode code = MemberSuccessCode.OK;
+      BaseSuccessCode code = MemberSuccessCode.GET_MEMBER;
       return ApiResponse.onSuccess(code, memberService.getInfo(dto));
    }
 }

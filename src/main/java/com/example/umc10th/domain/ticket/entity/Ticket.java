@@ -2,6 +2,7 @@ package com.example.umc10th.domain.ticket.entity;
 
 import com.example.umc10th.domain.member.entity.Member;
 import com.example.umc10th.domain.ticket.enums.Category;
+import com.example.umc10th.domain.ticket.enums.IsAnswered;
 import com.example.umc10th.global.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -36,5 +37,5 @@ public class Ticket extends BaseEntity {
 
    @Enumerated(EnumType.STRING)
    @Column(name = "is_answered", nullable = false)
-   private TicketReply isAnswered;
+   private IsAnswered isAnswered;
 }

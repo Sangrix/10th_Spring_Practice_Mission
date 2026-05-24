@@ -1,10 +1,10 @@
-package umc;
+package umc10th;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApplicationTests {
+class Umc10thApplicationTests {
 
 	@Test
 	void contextLoads() {

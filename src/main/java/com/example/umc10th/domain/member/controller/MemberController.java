@@ -22,10 +22,4 @@ public class MemberController {
       BaseSuccessCode code = MemberSuccessCode.SIGN_UP;
       return ApiResponse.onSuccess(code,memberService.signUp(dto));
    }
-
-   @PostMapping("/v1/users/me")
-   public ApiResponse<MemberResDTO.GetInfo> getInfo( @RequestBody MemberReqDTO.GetInfo dto){
-      BaseSuccessCode code = MemberSuccessCode.GET_MEMBER;
-      return ApiResponse.onSuccess(code, memberService.getInfo(dto));
-   }
 }

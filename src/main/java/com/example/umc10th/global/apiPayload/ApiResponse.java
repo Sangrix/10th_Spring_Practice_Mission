@@ -1,6 +1,7 @@
 package com.example.umc10th.global.apiPayload;
 
 import com.example.umc10th.global.apiPayload.code.BaseErrorCode;
+import com.example.umc10th.global.apiPayload.code.BaseSuccessCode;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,6 +24,9 @@ public class ApiResponse<T> {
    private T result;
 
    // success (include result)
+   public static <T> ApiResponse<T> onSuccess(BaseSuccessCode code, T result){
+      return new ApiResponse<>(true, code.getCode(), code.getMessage(), result);
+   }
 
    // fail (include result)
    public static <T> ApiResponse<T> onFailure(BaseErrorCode code, T result){

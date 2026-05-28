@@ -28,6 +28,8 @@ public class SecurityConfig {
             // Swagger 허용
             "/swagger-ui/**",
             "/swagger-resources/**",
+            "/swagger-ui.html",
+            "/v3/api-docs/swagger-config", 
             "/v3/api-docs/**",
 
             // public api

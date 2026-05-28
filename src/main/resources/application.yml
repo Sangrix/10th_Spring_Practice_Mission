@@ -18,8 +18,8 @@ spring:
       hibernate:
         format_sql: true # printed sql query formating
 
-  jwt:
-    token:
-      secretKey: ${JWT_SECRET_KEY}
-      expiration:
-        access: 1800000 # 30분
+jwt:
+  token:
+    secretKey: ${JWT_SECRET_KEY}
+    expiration:
+      access: 1800000 # 30분

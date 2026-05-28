@@ -37,6 +37,7 @@ public class MemberConverter {
     public static MemberResDTO.MyPage toMyPageRes(Member member) {
         return MemberResDTO.MyPage.builder()
             .name(member.getName())
+            .email(member.getEmail())
             .point(member.getPoint())
             .build();
     }

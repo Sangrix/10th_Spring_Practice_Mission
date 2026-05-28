@@ -21,6 +21,9 @@ public class MemberController {
       return ApiResponse.onSuccess(code, memberService.signUp(dto));
    }
 
+   @PostMapping("/auth/login")
+
+
    @GetMapping("/members/me")
    public ApiResponse<MemberResDTO.MyPage> getMyPage(
        @RequestParam Long id   // 추후 JWT 적용 시 @AuthenticationPrincipal로 교체

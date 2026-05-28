@@ -13,6 +13,8 @@ public class MemberConverter {
             .gender(dto.gender())
             .birth(dto.birth())
             .address(dto.address())
+            .email(dto.email())
+            .password(dto.password())
             .build();
     }
 
